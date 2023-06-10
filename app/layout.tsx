@@ -1,7 +1,13 @@
-import './globals.css'
-import { Inter } from 'next/font/google'
+import Footer from '@/components/Footer'
+import Header from '@/components/Header'
+import '@/styles/globals.css'
+import { Heebo } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
+const heebo = Heebo({
+  subsets: ['latin'],
+  weight: ['400', '500', '700', '900'],
+  variable: '--font-heebo',
+})
 
 export const metadata = {
   title: 'Create Next App',
@@ -14,8 +20,16 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang='es'>
+      <head>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      </head>
+      <body className={heebo.className}>
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   )
 }

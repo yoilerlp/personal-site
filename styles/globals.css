@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+  --primary: #FF6464;
+  --secondary: #00A8CC;
+  --blue-light: #EDF7FA;
+  --dark: #21243D;
+  --light: #8695A4;
+}
+
+/* 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary: red;
+  }
+} */
+
+
+@layer utilities {
+  .wrapper {
+    @apply max-w-7xl w-full px-4 md:px-36 mx-auto;
+  }
+}

@@ -1,7 +1,6 @@
 import React from 'react'
 
 type Post = {
-  //
   title: string
   description: string
   slug: string
@@ -11,16 +10,18 @@ type Post = {
 
 interface PostCardProps {
   post: Post
+  className?: string
 }
-
 
 // const MAX_TITLE_LENGTH = 82
 const MAX_TAGS_LENGTH = 3
 // const MAX_DESCRIPTION_LENGTH = 200
 
-function PostCard({ post  }: PostCardProps) {
+function PostCard({ post, className = '' }: PostCardProps) {
   return (
-    <article className=' w-full flex flex-col gap-4 p-6 pr-5 rounded bg-white'>
+    <article
+      className={`w-full flex flex-col gap-4 p-6 pr-5 rounded bg-white ${className}`}
+    >
       <header className='max-h-20 overflow-y-hidden  text-ellipsis line-clamp-2	'>
         <h3
           title={post.title}

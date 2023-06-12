@@ -1,9 +1,11 @@
-import Image from 'next/image'
 import React from 'react'
+import Image from 'next/image'
+import { SocialMediaLinksComponent } from './Footer'
+
 const Hero = () => {
   return (
-    <section className=' border wrapper flex flex-col-reverse gap-8 items-center md:gap-[6.5rem] pt-8 pb-14 md:flex-row md:flex- md:pb-[4.375rem] md:pt-32'>
-      <div className=' border max-sm:items-center  flex flex-col gap-10'>
+    <section className=' wrapper flex flex-col-reverse gap-8 items-center md:gap-[6.5rem] pt-8 pb-14 md:flex-row md:flex- md:pb-[4.375rem] md:pt-14'>
+      <div className=' max-sm:items-center  flex flex-col gap-10'>
         <h1 className=' max-sm:text-center font-bold text-dark text-title'>
           Hi, I am John, Creative Technologist
         </h1>
@@ -14,12 +16,15 @@ const Hero = () => {
           veniam consequat sunt nostrud amet.
         </p>
 
-        <button
-          role={'link'}
-          className='w-52 h-12 bg-primary text-white font-medium leading-8 text-xl'
-        >
-          Download Resume
-        </button>
+        <div className='flex gap-7  '>
+          <SocialMediaLinksComponent className='gap-4' />
+          <button
+            role={'link'}
+            className='w-52 h-12 bg-primary text-white font-medium leading-8 text-xl'
+          >
+            Download Resume
+          </button>
+        </div>
       </div>
       <div>
         <figure className='w-[243px] h-[243px] rounded-full overflow-hidden'>

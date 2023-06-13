@@ -1,15 +1,10 @@
 import React from 'react'
+import Link from 'next/link'
 
-type Post = {
-  title: string
-  description: string
-  slug: string
-  date: string
-  tags: string[]
-}
+import { IBlogPost } from '@/interfaces/post'
 
 interface PostCardProps {
-  post: Post
+  post: IBlogPost
   className?: string
 }
 
@@ -25,16 +20,18 @@ function PostCard({ post, className = '' }: PostCardProps) {
       <header className='max-h-20 overflow-y-hidden  text-ellipsis line-clamp-2	'>
         <h3
           title={post.title}
-          className=' text-ellipsis text-[1.625rem] font-bold text-dark leading-10'
+          className='hover:underline text-ellipsis text-[1.625rem] font-bold text-dark leading-10'
         >
-          {post.title}
+          <Link href={`/blog/${post.id}`} >{post.title}</Link>
         </h3>
       </header>
       <div className='text-dark text-lg	leading-7 flex gap-5'>
         <span>{post.date}</span>
         {'|'}
-        <span title={post.tags.join(', ')} className='truncate'>
-          {post.tags?.slice(0, MAX_TAGS_LENGTH).join(', ')}
+        <span title={post?.tags?.join(', ')} className='truncate'>
+          {
+            post?.tags?.slice(0, MAX_TAGS_LENGTH).join(', ')
+          }
         </span>
       </div>
       <main className=''>

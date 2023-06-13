@@ -13,11 +13,11 @@ export const SocialMediaLinksItemsDetails: SocialIconData[] = [
   //   brandColor: '#4267B2',
   //   link: MySocialMediaLinks.facebook,
   // },
-  {
-    iconName: 'InstagramIcon',
-    brandColor: '#e1306c',
-    link: MySocialMediaLinks.instagram,
-  },
+  // {
+  //   iconName: 'InstagramIcon',
+  //   brandColor: '#e1306c',
+  //   link: MySocialMediaLinks.instagram,
+  // },
   {
     iconName: 'TwitterIcon',
     brandColor: '#1DA1F2',

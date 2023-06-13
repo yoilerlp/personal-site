@@ -6,7 +6,7 @@ import styles from '@/styles/about.module.css'
 
 function AboutMePage() {
   return (
-    <main className={`${styles.about_page}`}>
+    <main className={`${styles.about_page} grow`}>
       <Container>
         <section className='flex gap-6 pt-8  md:pt-14'>
           <div className='hidden lg:flex w-full justify-center'>

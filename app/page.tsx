@@ -2,12 +2,16 @@ import Container from '@/components/Container'
 import Hero from '@/components/Hero'
 import PostCard from '@/components/PostCard'
 import ProjectCard from '@/components/ProjectCard'
+import { getAllPosts } from '@/helpers/blog'
 import { mockPosts, mocksProjects } from '@/helpers/mocks'
 import Link from 'next/link'
 
 
 
-export default function Home() {
+export default async function Home() {
+
+  const posts = await getAllPosts()
+
   return (
     <main className='w-full'>
       <Hero />
@@ -24,7 +28,7 @@ export default function Home() {
           </Link>
         </div>
         <div className='grid max-sm:grid-cols-1 grid-cols-posts gap-5 '>
-          {mockPosts.slice(0,2).map((item, idx) => (
+          {posts.slice(0,2).map((item, idx) => (
             <PostCard key={idx} post={item} />
           ))}
         </div>

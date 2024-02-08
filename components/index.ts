@@ -4,4 +4,6 @@ export { default as Footer } from './Footer'
 export { default as Icon } from './Icon'
 
 export { default as PostCard } from './PostCard'
+export { default as BlogPostHeader } from './BlogPostHeader'
 export { default as ProjectCard } from './ProjectCard'
+export * from './Tags'

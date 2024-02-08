@@ -1,124 +1,63 @@
-export const mockPosts = [
+import { tags } from '@/interfaces/post'
+import { Project } from '@/interfaces/project'
+
+const codingList: Project[] = [
   {
-    title: 'Making a design system from scratch',
-    description: `Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
-      sint. Velit officia consequat duis enim velit mollit. Exercitation
-      veniam consequat sunt nostrud amet.
-      et minim mollit non deserunt ullamco est sit aliqua dolor do amet
-      sint. Velit officia consequat duis enim velit mollit. Exercitation
-      veniam consequat sunt nostru
-      et minim mollit non deserunt ullamco est sit aliqua dolor do amet
-      sint. Velit officia consequat duis enim velit mollit. Exercitation
-      veniam consequat sunt nostru
-      et minim mollit non deserunt ullamco est sit aliqua dolor do amet
-      sint. Velit officia consequat duis enim velit mollit. Exercitation
-      veniam consequat sunt nostru
-      et minim mollit non deserunt ullamco est sit aliqua dolor do amet
-      sint. Velit officia consequat duis enim velit mollit. Exercitation
-      veniam consequat sunt nostru
-  
-      et minim mollit non deserunt ullamco est sit aliqua dolor do amet
-      sint. Velit officia consequat duis enim velit mollit. Exercitation
-      veniam consequat sunt nostru
-      `,
-    slug: '',
-    date: '12 Feb 2020',
-    tags: ['Design', 'Pattern'],
+    title: 'EbookApp Example',
+    description:
+      'Este proyecto recrea la experiencia de una aplicación de libros electrónicos utilizando React Native. Es una opción cómoda para disfrutar de la lectura en dispositivos móviles.',
+    year: 2021,
+    tags: [tags.React, tags.ReactNative, tags.UI, tags.UX],
+    category: 'Mobile',
+    codeURL: 'https://github.com/yoilerlp/EbookApp-example',
+    img: 'https://raw.githubusercontent.com/yoilerlp/EbookApp-example/main/result/1.jpg',
   },
   {
-    title:
-      'Making a design system from scratch 12312 sdkajsldkas sadasds asdas asdasd asd as',
-    description: `Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
-      sint. Velit officia consequat duis enim velit mollit. Exercitation
-      veniam consequa`,
-    slug: '',
-    date: '12 Feb 2020',
-    tags: ['Design', 'Pattern', 'Code', 'Life', 'Life', 'Life', 'Lasdasd dasd'],
+    title: 'The MovieDB App',
+    description:
+      'Esta aplicación permite buscar y explorar películas utilizando el API de TheMovieDB. Proporciona detalles completos sobre el elenco, la trama y las críticas, todo desde la comodidad del dispositivo móvil.',
+    year: 2021,
+    tags: [
+      tags.React,
+      tags.ReactNative,
+      tags.UI,
+      tags.UX,
+      tags.API,
+      tags.TheMovieDB,
+    ],
+    category: 'Mobile',
+    codeURL: 'https://github.com/yoilerlp/MovieAppTest',
+    img: 'https://raw.githubusercontent.com/yoilerlp/MovieAppTest/main/result/2.jpg',
   },
   {
-    title: 'asdasd a design system ',
-    description: `Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
-      sint. Velit officia consequat duis enim velit mollit. Exercitation
-      veniam consequat sunt nostrud amet. asdsa sad asdasdkjdaskljd laskjdklasjdlkas
-      asdkasjdhaskldjaskl jdsla sdaskui asdukjasdiasd asdasidkasdasdas
-      kslajasdkjasl sadklasjuds sadlkasdjasldk klosjloikkl;;alsjkdl;as sadasldsa asdasd asdastv asdasdasd
-      asdqweqwev sadasdadasdasdas`,
-    slug: '',
-    date: '31 Diciembre 2023',
-    tags: ['Design', 'Pattern', 'Code', 'Life'],
+    title: 'Command-Book',
+    description:
+      'Command-Book es una API desarrollada en C# con ASP.NET Core, diseñada para almacenar los comandos más utilizados por un desarrollador. Esta API ofrece la posibilidad de categorizar los comandos por plataforma, facilitando así su acceso y organización.',
+    year: 2021,
+    tags: [
+      tags.API,
+      tags.Csharp,
+      tags.aspNetCore,
+      tags.netCore,
+      tags.postgreSql,
+    ],
+    category: 'Backend',
+    codeURL: 'https://github.com/yoilerlp/command-book',
+    img: 'https://i.imgur.com/XttIyBC.png',
   },
   {
-    title: 'asdasd a design system ',
-    description: `Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
-      sint. Velit officia consequat duis enim velit mollit. Exercitation
-      veniam consequat sunt nostrud amet. asdsa sad asdasdkjdaskljd laskjdklasjdlkas
-      asdkasjdhaskldjaskl jdsla sdaskui asdukjasdiasd asdasidkasdasdas
-      kslajasdkjasl sadklasjuds sadlkasdjasldk klosjloikkl;;alsjkdl;as sadasldsa asdasd asdastv asdasdasd
-      asdqweqwev sadasdadasdasdas`,
-    slug: '',
-    date: '31 Diciembre 2023',
-    tags: ['Design', 'Pattern', 'Code', 'Life'],
-  },
-  {
-    title: 'asdasd a design system ',
-    description: `Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
-      sint. Velit officia consequat duis enim velit mollit. Exercitation
-      veniam consequat sunt nostrud amet. asdsa sad asdasdkjdaskljd laskjdklasjdlkas
-      asdkasjdhaskldjaskl jdsla sdaskui asdukjasdiasd asdasidkasdasdas
-      kslajasdkjasl sadklasjuds sadlkasdjasldk klosjloikkl;;alsjkdl;as sadasldsa asdasd asdastv asdasdasd
-      asdqweqwev sadasdadasdasdas`,
-    slug: '',
-    date: '31 Diciembre 2023',
-    tags: ['Design', 'Pattern', 'Code', 'Life'],
-  },
-  {
-    title: 'asdasd a design system ',
-    description: `Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
-      sint. Velit officia consequat duis enim velit mollit. Exercitation
-      veniam consequat sunt nostrud amet. asdsa sad asdasdkjdaskljd laskjdklasjdlkas
-      asdkasjdhaskldjaskl jdsla sdaskui asdukjasdiasd asdasidkasdasdas
-      kslajasdkjasl sadklasjuds sadlkasdjasldk klosjloikkl;;alsjkdl;as sadasldsa asdasd asdastv asdasdasd
-      asdqweqwev sadasdadasdasdas`,
-    slug: '',
-    date: '31 Diciembre 2023',
-    tags: ['Design', 'Pattern', 'Code', 'Life'],
-  },
-  {
-    title: 'asdasd a design system ',
-    description: `Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
-      sint. Velit officia consequat duis enim velit mollit. Exercitation
-      veniam consequat sunt nostrud amet. asdsa sad asdasdkjdaskljd laskjdklasjdlkas
-      asdkasjdhaskldjaskl jdsla sdaskui asdukjasdiasd asdasidkasdasdas
-      kslajasdkjasl sadklasjuds sadlkasdjasldk klosjloikkl;;alsjkdl;as sadasldsa asdasd asdastv asdasdasd
-      asdqweqwev sadasdadasdasdas`,
-    slug: '',
-    date: '31 Diciembre 2023',
-    tags: ['Design', 'Pattern', 'Code', 'Life'],
+    title: 'ParkingLP',
+    description:
+      'ParkingLP es una aplicación web diseñada para gestionar parqueaderos. Permite a los usuarios afiliarse, reservar espacios de estacionamiento y cuenta con un panel de administración para la gestión de la plataforma.',
+    year: 2021,
+    tags: [tags.HTML, tags.CSS, tags.Javascript, tags.Firebase],
+    category: 'Web',
+    codeURL: 'https://github.com/yoilerlp/ParkingLp',
+    demoURL: 'https://proyecto-parqueadero.web.app/',
+    img: 'https://i.imgur.com/ereWHH4.jpg',
   },
 ]
 
-export const mocksProjects = [
-  {
-    title: 'Designing Dashboards',
-    category: 'Dashboard',
-    year: 2020,
-    description: `Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.`,
-    tags: ['HTMl', 'CSS', 'JAVASCRIPT', 'REACT', 'NEXT', 'ANOTHER TAG', 'XDDDDD'],
-  },
-  {
-    title: 'Vibrant Portraits of 2020',
-    category: 'Illustration',
-    year: 2018,
-    description: `Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.`,
-    tags: ['HTMl', 'CSS', 'JAVASCRIPT', 'FIREBASE'],
-
-  },
-  {
-    title: '36 Days of Malayalam type',
-    category: 'Typography',
-    year: 2018,
-    description: `Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.`,
-    tags: ['REACT NATIVE', 'JAVASCRIPT', 'NODEJS', 'NESJ'],
-
-  },
+export const mocksProjects: Project[] = [
+    ...codingList
 ]

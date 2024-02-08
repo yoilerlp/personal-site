@@ -1,4 +1,4 @@
-import { IconName } from '@/components/Icon'
+import type { IconName } from '@/components/Icon'
 import { MySocialMediaLinks } from '@/util/aboutMe'
 
 type SocialIconData = {

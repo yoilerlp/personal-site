@@ -1,8 +1,14 @@
 import fs from 'fs'
 import path from 'path'
-import { compileMDX } from 'next-mdx-remote/rsc'
 
-import { IBlogPost } from '@/interfaces/post'
+import rehypePrettyCode, { Options } from 'rehype-pretty-code'
+import { compileMDX } from 'next-mdx-remote/rsc'
+import rehypeSlug from 'rehype-slug'
+
+import type { IBlogPost } from '@/interfaces/post'
+import { components } from '../components/blogComponents'
+
+const rehypeOptions: Options = {}
 
 const postsFolder = path.join(process.cwd(), 'blog')
 
@@ -26,23 +32,32 @@ export const getAllPosts = async () => {
 export const getPostById = async (id: string) => {
   const realSlug = id.replace(/\.md$/, '')
 
-  const filePath = path.join(postsFolder, `${realSlug}.md`)
+  const filePath = path.join(postsFolder, `${realSlug}/index.md`)
 
   const fileContent = fs.readFileSync(filePath, { encoding: 'utf-8' })
 
   const { frontmatter, content } = await compileMDX({
     source: fileContent,
+    components,
     options: {
       parseFrontmatter: true,
+      mdxOptions: {
+        rehypePlugins: [
+          [rehypePrettyCode, rehypeOptions],
+          [rehypeSlug, {}],
+        ],
+      },
     },
   })
 
   const tags: string[] = (frontmatter?.tags as any)?.split(',') || []
+
   const postData: IBlogPost = {
     id: realSlug,
-    title: (frontmatter?.title as any) || '',
+    title: (frontmatter?.title as string) || '',
     description: (frontmatter?.description as any) || '',
-    date: (frontmatter?.date as any) || '',
+    date: (frontmatter?.date as string) || '',
+    poster: (frontmatter?.poster as string) || '',
     tags,
     body: content,
   }

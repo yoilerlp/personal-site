@@ -1,4 +1,4 @@
-// import { Colors } from '@/styles/config/base';
+'use client'
 import React from 'react'
 
 import * as IconsObject from './Icons'
@@ -23,7 +23,14 @@ export const Icon = ({
 }: IconWrapperProps) => {
   const IconComponent = IconsObject[iconName]
   if (!IconComponent) return null
-  return <IconComponent {...restProps} size={size} color={color} />
+  return (
+    <IconComponent
+      {...restProps}
+      size={size}
+      color={color}
+      className={`${restProps.className} icon-component`}
+    />
+  )
 }
 
 export default Icon

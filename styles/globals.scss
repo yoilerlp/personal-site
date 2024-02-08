@@ -2,22 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-
 :root {
-  --primary: #FF6464;
-  --secondary: #00A8CC;
-  --blue-light: #EDF7FA;
-  --dark: #21243D;
-  --light: #8695A4;
+  --primary: #ff6464;
+  --secondary: #00a8cc;
+  --blue-light: #edf7fa;
+  --dark: #21243d;
+  --light: #8695a4;
 }
-
-/* 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --primary: red;
-  }
-} */
-
 
 @layer utilities {
   .wrapper {
@@ -25,4 +16,91 @@
   }
 }
 
+.blog-post-wrapper {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    a {
+      border: none;
+      border-bottom-color: transparent;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+        text-decoration-color: var(--primary);
+      }
+    }
+  }
 
+  p {
+    text-align: justify;
+  }
+
+  pre {
+    @apply px-0 rounded-lg;
+  }
+
+  pre > code {
+    counter-reset: line;
+  }
+
+  code[data-line-numbers] {
+    counter-reset: line;
+  }
+
+  code[data-line-numbers] > [data-line]::before {
+    counter-increment: line;
+    content: counter(line);
+    @apply inline-block w-4 mr-4 text-right text-gray-500;
+  }
+
+  pre [data-line] {
+    @apply px-2;
+  }
+
+  [data-highlighted-line] {
+    @apply bg-zinc-600/50 rounded;
+  }
+
+  // resalto de palabra
+  [data-highlighted-chars] {
+    @apply bg-zinc-600/50 rounded;
+    box-shadow: 0 0 0 4px rgb(82 82 91 / 0.5);
+  }
+  // para el titulo del archivo
+  [data-rehype-pretty-code-title] {
+    @apply bg-[#2c3138] text-zinc-200 rounded-t-lg py-2 px-3 font-medium;
+    + pre {
+      @apply mt-0 rounded-t-none;
+    }
+  }
+}
+
+.toggle-component {
+  padding: 4px;
+  background-color: black !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10;
+  border-radius: 28px;
+  position: relative;
+  width: 80px;
+  cursor: pointer;
+  input[type='checkbox'] {
+    @apply appearance-none w-0 h-0;
+  }
+
+  .toggle-box {
+    @apply w-7 h-7 bg-[transparent] rounded-full;
+  }
+  .indicator {
+    @apply w-7 h-7 bg-[#F1F1F1] absolute translate-x-0 top-1 rounded-full;
+    transition: transform 0.5s ease;
+    &.dark {
+      transform: translateX(calc(100% + 28px - 10px));
+    }
+  }
+}

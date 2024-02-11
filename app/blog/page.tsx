@@ -1,7 +1,8 @@
 import React from 'react'
+import { Metadata } from 'next'
+
 import { PostCard, Container } from '@/components'
 import { aboutMe, aboutMeShort } from '@/helpers/me'
-import { Metadata } from 'next'
 import { getAllMyPosts } from '@/services/blog'
 
 export const metadata: Metadata = {

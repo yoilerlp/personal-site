@@ -14,8 +14,7 @@ interface ProjectCardProps {
 }
 
 function ProjectCard({ project, className = '' }: ProjectCardProps) {
-  const { theme } = useCurrentTheme()
-  const isDark = theme === 'dark'
+  const { isDark } = useCurrentTheme()
   return (
     <article
       className={`grid grid-cols-1 md:grid-cols-[250px_1fr] gap-5 w-full border-b pb-4 ${className}`}
@@ -36,10 +35,11 @@ function ProjectCard({ project, className = '' }: ProjectCardProps) {
               href={project.codeURL}
               target='_blank'
             >
-              <Icon 
+              <Icon
                 color={isDark ? 'white' : undefined}
-
-              iconName='CodeIcon' size={24} />
+                iconName='CodeIcon'
+                size={24}
+              />
               <span>Code</span>
             </Link>
           )}

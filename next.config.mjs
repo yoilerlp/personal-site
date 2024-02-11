@@ -9,7 +9,6 @@ const withMDX = nextMDX({
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // mdxRs: true,
   images: {
     remotePatterns: [
       {

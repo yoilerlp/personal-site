@@ -5,15 +5,21 @@ import React, { useEffect, useLayoutEffect } from 'react'
 type ThemeContext = {
   theme: 'light' | 'dark'
   toggleTheme: () => void
+  appIsReady: boolean
+  isDark: boolean
 }
 
 const THEME_LOCAL_STORAGE_KEY = 'theme'
 
 const getInitialTheme = () => {
-  if (typeof window === 'undefined') return 'dark'
+  if (typeof window === 'undefined') return 'light'
 
   if (!userHasThemePreference()) {
-    return 'dark'
+    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      console.log('entro aca')
+      return 'dark'
+    }
+    return 'light'
   }
 
   const persistedTheme = localStorage.getItem(THEME_LOCAL_STORAGE_KEY)
@@ -21,12 +27,11 @@ const getInitialTheme = () => {
     return persistedTheme as ThemeContext['theme']
   }
 
-  return 'dark'
+  return 'light'
 }
 
 const userHasThemePreference = () => {
-  if (typeof window === 'undefined') return false
-  return !!localStorage.getItem(THEME_LOCAL_STORAGE_KEY)
+  return localStorage.getItem(THEME_LOCAL_STORAGE_KEY) !== null
 }
 
 export const ThemeContext = React.createContext<ThemeContext>(
@@ -38,10 +43,13 @@ export default function ThemeProvider({
 }: {
   children: React.ReactNode
 }) {
-  const [theme, setTheme] =
-    React.useState<ThemeContext['theme']>(getInitialTheme)
+  const [isReady, setIsReady] = React.useState(false)
 
-  useEffect(() => {
+  const [theme, setTheme] = React.useState<ThemeContext['theme'] | undefined>(
+    typeof window !== 'undefined' ? getInitialTheme() : undefined
+  )
+
+  useLayoutEffect(() => {
     if (typeof window !== 'undefined') {
       document.documentElement.classList.toggle('dark', theme === 'dark')
     }
@@ -59,6 +67,7 @@ export default function ThemeProvider({
       isDark = e.matches
       setTheme(isDark ? 'dark' : 'light')
     }
+
     media.addEventListener('change', mediaListener)
 
     setTheme(isDark ? 'dark' : 'light')
@@ -66,6 +75,10 @@ export default function ThemeProvider({
     return () => {
       media.removeEventListener('change', mediaListener)
     }
+  }, [])
+
+  useEffect(() => {
+    setIsReady(true)
   }, [])
 
   const toggleTheme = () => {
@@ -77,8 +90,10 @@ export default function ThemeProvider({
   return (
     <ThemeContext.Provider
       value={{
-        theme,
+        theme: theme!,
         toggleTheme,
+        appIsReady: isReady,
+        isDark: theme === 'dark' && isReady,
       }}
     >
       {children}

@@ -2,6 +2,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+
 import Container from './Container'
 import useCurrentTheme from '@/hooks/useCurrentTheme'
 import ThemeToggleButton from './ThemeToggleButton'
@@ -20,7 +21,7 @@ function Header() {
     <header className='h-12 flex justify-center items-center py-7 px-3 lg:px-14  lg:justify-end'>
       <Container>
         <ul className='flex gap-9 items-center'>
-          {links.map((link) => {
+          {links.map((link, idx) => {
             const active =
               link.href === '/'
                 ? pathName === link.href
@@ -30,13 +31,18 @@ function Header() {
                 className={`dark:text-blueLight dark:hover:text-primary text-xl font-medium ${
                   active && 'text-primary dark:text-primary'
                 }`}
-                key={link.href}
+                key={`${link.href}${link.label}-header-${idx}`}
               >
                 <Link href={link.href}>{link.label}</Link>
               </li>
             )
           })}
-          <ThemeToggleButton />
+          <li>
+            <ThemeToggleButton
+              isDark={themeContext?.isDark}
+              toggleTheme={themeContext?.toggleTheme}
+            />
+          </li>
         </ul>
       </Container>
     </header>

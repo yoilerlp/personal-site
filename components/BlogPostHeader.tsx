@@ -10,7 +10,9 @@ const BlogPostHeader = ({ post }: { post: IBlogPost }) => {
   return (
     <>
       <section className='flex flex-col gap-5 items-center my-9'>
-        <h1 className='dark:text-white text-title text-dark text-center '>{post.title}</h1>
+        <h1 className='dark:text-white text-title text-dark text-center '>
+          {post.title}
+        </h1>
         <div className='flex gap-2 items-center '>
           <div className='w-9 h-9 overflow-hidden rounded-[20px]'>
             <Image
@@ -22,8 +24,12 @@ const BlogPostHeader = ({ post }: { post: IBlogPost }) => {
             />
           </div>
           <div>
-            <h2 className='dark:text-primary text-[1rem] font-bold text-dark'>Yoyler Córdoba</h2>
-            <span className='dark:text-light text-[0.875rem]'>{formatDate(post.date)}</span>
+            <h2 className='dark:text-primary text-[1rem] font-bold text-dark'>
+              Yoyler Córdoba
+            </h2>
+            <span className='dark:text-light text-[0.875rem]'>
+              {formatDate(post.date)}
+            </span>
           </div>
         </div>
         <ProjectCardTags

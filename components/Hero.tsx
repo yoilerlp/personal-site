@@ -1,11 +1,13 @@
+'use client'
+
 import React from 'react'
 import Image from 'next/image'
-import { SocialMediaLinksComponent } from './Footer'
 import { aboutMeShort } from '@/helpers/me'
+import SocialMediaLinksComponent from './SocialMediaLinks'
 
 const Hero = () => {
   return (
-    <section className=' wrapper flex flex-col-reverse gap-8 items-center md:gap-[6.5rem] pt-8 pb-14 md:flex-row md:flex- md:pb-[4.375rem] md:pt-14'>
+    <section className='wrapper flex flex-col-reverse gap-8 items-center md:gap-[6.5rem] pt-8 pb-14 md:flex-row md:flex- md:pb-[4.375rem] md:pt-14'>
       <div className=' max-sm:items-center  flex flex-col gap-10'>
         <h1 className='dark:text-primary max-sm:text-center text-justify font-bold text-dark text-title'>
           {/* Hi, I am Yoyler, a Software Developer */}

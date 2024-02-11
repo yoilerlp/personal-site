@@ -1,4 +1,5 @@
-import { useContext, useMemo } from 'react'
+'use client'
+import { useContext } from 'react'
 import { ThemeContext } from '@/components/ThemeProvider'
 
 export default function useCurrentTheme() {

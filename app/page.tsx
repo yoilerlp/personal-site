@@ -32,7 +32,9 @@ export default async function Home() {
       </Container>
       <Container className='pb-8 dark:bg-bgDark'>
         <div className='flex justify-between items-center mb-1'>
-          <h2 className='dark:text-primary text-dark text-[1.375rem] leading-[60px]'>Coding</h2>
+          <h2 className='dark:text-primary text-dark text-[1.375rem] leading-[60px]'>
+            Coding
+          </h2>
           <Link
             className='dark:text-light text-secondary text-base leading-6 text-right hover:underline'
             href={'/coding'}

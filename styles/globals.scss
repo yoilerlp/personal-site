@@ -84,7 +84,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 10;
+  gap: 10px;
   border-radius: 28px;
   position: relative;
   width: 80px;
@@ -97,10 +97,13 @@
     @apply w-7 h-7 bg-[transparent] rounded-full;
   }
   .indicator {
-    @apply w-7 h-7 bg-[#F1F1F1] absolute translate-x-0 top-1 rounded-full;
+    @apply w-7 h-7 bg-[#F1F1F1] absolute top-1 rounded-full;
     transition: transform 0.5s ease;
-    &.dark {
+    &.is-dark {
       transform: translateX(calc(100% + 28px - 10px));
+    }
+    &.is-light {
+      transform: translateX(0);
     }
   }
 }

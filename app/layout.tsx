@@ -68,15 +68,15 @@ export default function RootLayout({
           href='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/github-dark.min.css'
         />
       </head>
-      <ThemeProvider>
-        <body
-          className={`${heebo.className} bg-white dark:bg-bgDark  flex flex-col h-full min-h-screen`}
-        >
+      <body
+        className={`${heebo.className} bg-white dark:bg-bgDark flex flex-col h-full min-h-screen`}
+      >
+        <ThemeProvider>
           <Header />
           {children}
           <Footer />
-        </body>
-      </ThemeProvider>
+        </ThemeProvider>
+      </body>
     </html>
   )
 }

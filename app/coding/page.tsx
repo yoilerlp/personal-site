@@ -1,8 +1,9 @@
 import React from 'react'
 import { Metadata } from 'next'
+
 import { ProjectCard, Container, ProjectCardTags } from '@/components'
 import { mocksProjects } from '@/helpers/mocks'
-import { aboutMe, aboutMeShort } from '@/helpers/me'
+import { aboutMeShort } from '@/helpers/me'
 
 type pageProps = {
   searchParams?: {

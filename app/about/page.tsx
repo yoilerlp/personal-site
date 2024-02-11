@@ -1,8 +1,9 @@
 import React from 'react'
+import { Metadata } from 'next'
 import Image from 'next/image'
+
 import { Container } from '@/components'
 import { aboutMe } from '@/helpers/me'
-import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: `About Me`,

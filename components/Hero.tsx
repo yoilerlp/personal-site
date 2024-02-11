@@ -31,14 +31,14 @@ const Hero = () => {
         </div>
       </div>
       <div>
-        <figure className='w-[243px] h-[243px] rounded-full overflow-hidden'>
+        <figure className='w-[230px] h-[230px] rounded-full overflow-hidden'>
           <Image
-            loading='lazy'
             src='/me.webp'
             alt='Yoyler Mosquera Córdoba - developer'
-            width={343}
-            height={343}
             className='object-cover'
+            width={230}
+            height={230}
+            priority
           />
         </figure>
       </div>

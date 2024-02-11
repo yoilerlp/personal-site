@@ -63,10 +63,10 @@ export default function RootLayout({
       <head>
         <meta httpEquiv='X-UA-Compatible' content='IE=edge' />
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-        <link
+        {/* <link
           rel='stylesheet'
           href='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/github-dark.min.css'
-        />
+        /> */}
       </head>
       <body
         className={`${heebo.className} bg-white dark:bg-bgDark flex flex-col h-full min-h-screen`}

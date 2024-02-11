@@ -10,7 +10,7 @@ const codingList: Project[] = [
     tags: [tags.React, tags.ReactNative, tags.UI, tags.UX],
     category: 'Mobile',
     codeURL: 'https://github.com/yoilerlp/EbookApp-example',
-    img: 'https://raw.githubusercontent.com/yoilerlp/EbookApp-example/main/result/1.jpg',
+    img: 'https://i.imgur.com/HLVHwDf.jpg',
   },
   {
     title: 'The MovieDB App',
@@ -27,7 +27,7 @@ const codingList: Project[] = [
     ],
     category: 'Mobile',
     codeURL: 'https://github.com/yoilerlp/MovieAppTest',
-    img: 'https://raw.githubusercontent.com/yoilerlp/MovieAppTest/main/result/2.jpg',
+    img: 'https://i.imgur.com/7Y6pKQX.jpg',
   },
   {
     title: 'Command-Book',
@@ -58,6 +58,4 @@ const codingList: Project[] = [
   },
 ]
 
-export const mocksProjects: Project[] = [
-    ...codingList
-]
+export const mocksProjects: Project[] = [...codingList]

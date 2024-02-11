@@ -37,12 +37,12 @@ function Header() {
               </li>
             )
           })}
-          <div>
+          <li>
             <ThemeToggleButton
               isDark={themeContext?.isDark}
               toggleTheme={themeContext?.toggleTheme}
             />
-          </div>
+          </li>
         </ul>
       </Container>
     </header>

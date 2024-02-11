@@ -24,8 +24,8 @@ function ProjectCard({ project, className = '' }: ProjectCardProps) {
           loading='lazy'
           src={project.img!}
           alt={`project - ${project.title}`}
-          width={246}
-          height={180}
+          width={"100"}
+          height={"100"}
           className='dark:bg-white object-cover overflow-hidden object-center w-full h-[180px] max-h-[180px]'
         />
         <div className='w-full mt-4 gap-4  flex '>
@@ -73,7 +73,7 @@ function ProjectCard({ project, className = '' }: ProjectCardProps) {
           </span>
         </div>
         <div>
-          <ProjectCardTags tags={project.tags || []} />
+          <ProjectCardTags className='flex-wrap' tags={project.tags || []} />
         </div>
         <p className='dark:text-white/90 text-base leading-6 text-justify'>
           {project?.description}

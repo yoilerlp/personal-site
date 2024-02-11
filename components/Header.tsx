@@ -20,7 +20,7 @@ function Header() {
   return (
     <header className='h-12 flex justify-center items-center py-7 px-3 lg:px-14  lg:justify-end'>
       <Container>
-        <ul className='flex gap-9 items-center'>
+        <ul className='w-full flex gap-4 sm:gap-7 items-center'>
           {links.map((link, idx) => {
             const active =
               link.href === '/'
@@ -37,12 +37,12 @@ function Header() {
               </li>
             )
           })}
-          <li>
+          <div>
             <ThemeToggleButton
               isDark={themeContext?.isDark}
               toggleTheme={themeContext?.toggleTheme}
             />
-          </li>
+          </div>
         </ul>
       </Container>
     </header>

@@ -19,7 +19,7 @@ function PostCard({ post, className = '' }: PostCardProps) {
         ` dark:bg-bgDark w-full flex flex-col gap-4 p-6 pr-5 rounded bg-white ${className}`
       )}
     >
-      <header className='max-h-20 overflow-y-hidden  text-ellipsis line-clamp-2	'>
+      <header className='overflow-y-hidden text-balance'>
         <h3
           title={post.title}
           className='dark:text-primary hover:underline lg:text-ellipsis text-[1.625rem] font-bold text-dark leading-10'
@@ -39,7 +39,7 @@ function PostCard({ post, className = '' }: PostCardProps) {
           {post?.tags?.slice(0, MAX_TAGS_LENGTH).join(', ')}
         </span> */}
       </div>
-      <main className=''>
+      <main>
         <p
           title={post.description}
           className='dark:text-white text-dark line-clamp-5 text-base leading-6 text-justify'
